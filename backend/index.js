@@ -2,6 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 dotenv.config()
 import cors from "cors"
+import connectDB from "./config/db.js";
 const app=express();
 
 //Middleware to handle Cors and Json Parsing
@@ -15,6 +16,8 @@ app.use(cors({
 //Port
 const port=process.env.PORT
 
+//Connect Database
+connectDB();
 //Routes
 //app.use('/api/auth',authRoutes);
 //app.use("/api/users",userRoutes);
